@@ -13,7 +13,8 @@ def get_logger(name: str, log_level: object = DEBUG,
     """
     logger = getLogger(name)
     logger.setLevel(log_level)
-    handler = StreamHandler(log_level)
+    handler = StreamHandler()
+    handler.setLevel(log_level)
     formatter = Formatter(format_str)
     handler.setFormatter(formatter)
     logger.addHandler(handler)
